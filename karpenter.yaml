@@ -1,0 +1,62 @@
+# ---
+# apiVersion: karpenter.sh/v1alpha5
+# kind: Provisioner
+# metadata:
+#   name: cpu
+# spec:
+#   requirements:
+#     - key: node.kubernetes.io/instance-type
+#       operator: In
+#       values: ["c5.xlarge"]
+#   labels:
+#     Name : cpu
+#   taints:
+#     - key: CpuOnly
+#       effect: NoSchedule
+#   provider:
+#     instanceProfile: KarpenterNodeInstanceProfile-batcave-dev
+#     launchTemplate: cpu-20220113143405730300000018
+#     subnetSelector:
+#       ContainerSubnet: "true"
+#   ttlSecondsAfterEmpty: 30
+
+# ---
+# apiVersion: karpenter.sh/v1alpha5
+# kind: Provisioner
+# metadata:
+#   name: memory
+# spec:
+#   requirements:
+#     - key: node.kubernetes.io/instance-type
+#       operator: In
+#       values: ["r5.xlarge"]
+#   labels:
+#     Name : critical
+#   taints:
+#     - key: MemoryOnly
+#       effect: NoSchedule
+#   provider:
+#     instanceProfile: KarpenterNodeInstanceProfile-batcave-test
+#     launchTemplate: memory-2022011303540058450000000d
+#     subnetSelector:
+#       ContainerSubnet: "true"
+#   ttlSecondsAfterEmpty: 30
+  
+---
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: general
+spec:
+  requirements:
+    - key: node.kubernetes.io/instance-type
+      operator: In
+      values: ["c4.xlarge"]
+  labels:
+    Name : general
+  provider:
+    instanceProfile: KarpenterNodeInstanceProfile-batcave-east-dev
+    launchTemplate: general-2022012006071202970000000b
+    subnetSelector:
+      ContainerSubnet: "true"
+  ttlSecondsAfterEmpty: 30
