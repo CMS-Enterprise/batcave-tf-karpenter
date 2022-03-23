@@ -60,3 +60,4 @@ spec:
     subnetSelector:
       ContainerSubnet: "true"
   ttlSecondsAfterEmpty: 30
+  ttlSecondsUntilExpired: 300
