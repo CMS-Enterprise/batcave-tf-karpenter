@@ -56,7 +56,7 @@ spec:
     Name : general
   provider:
     instanceProfile: KarpenterNodeInstanceProfile-batcave-east-dev
-    launchTemplate: general-2022012006071202970000000b
+    launchTemplate: general-2022012121263893840000000b
     subnetSelector:
       ContainerSubnet: "true"
   ttlSecondsAfterEmpty: 30
