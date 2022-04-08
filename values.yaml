@@ -1,13 +1,13 @@
-controller:
-  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/controller:v0.6.1"
-  tolerations:
+imagePullSecrets:
+  - private-registry
+  
+tolerations:
     - key: "CriticalAddonsOnly"
       operator: "Exists"
       effect: "NoSchedule"
 
+controller:
+  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/controller:v0.8.1"
+
 webhook:
-  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/webhook:v0.6.1"
-  tolerations:
-    - key: "CriticalAddonsOnly"
-      operator: "Exists"
-      effect: "NoSchedule"
+  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/webhook:v0.8.1"

@@ -24,7 +24,7 @@ resource "helm_release" "karpenter" {
   name       = "karpenter"
   repository = "https://charts.karpenter.sh"
   chart      = "karpenter"
-  version    = "0.6.1"
+  version    = "0.8.1"
 
   values = [
     "${file("values.yaml")}"
