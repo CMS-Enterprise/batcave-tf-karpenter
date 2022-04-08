@@ -1,12 +1,12 @@
 controller:
-  image: artifactory.cloud.cms.gov/batcave-docker/karpenter/controller:v0.6.1
+  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/controller:v0.6.1"
   tolerations:
     - key: "CriticalAddonsOnly"
       operator: "Exists"
       effect: "NoSchedule"
 
 webhook:
-  image: artifactory.cloud.cms.gov/batcave-docker/karpenter/webhook:v0.6.1
+  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/webhook:v0.6.1"
   tolerations:
     - key: "CriticalAddonsOnly"
       operator: "Exists"
