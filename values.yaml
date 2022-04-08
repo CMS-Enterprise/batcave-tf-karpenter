@@ -1,6 +1,6 @@
 imagePullSecrets:
-  - private-registry
-  
+  - name: private-registry
+
 tolerations:
     - key: "CriticalAddonsOnly"
       operator: "Exists"
