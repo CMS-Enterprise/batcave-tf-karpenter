@@ -34,3 +34,13 @@ variable "helm_name" {
 variable "cluster_endpoint" {
     default = ""
 }
+
+### testing for deploying docker creds
+
+variable "registry_username" {
+    default = ""
+}
+
+variable "registry_password" {
+    default = ""
+}
