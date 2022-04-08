@@ -44,25 +44,3 @@ resource "helm_release" "karpenter" {
     value = var.cluster_endpoint
   }
 }
-
-resource "kubernetes_secret" "private-registry" {
-
-  metadata {
-    name = "private-registry"
-    namespace = var.helm_namespace
-  }
-
-  type = "kubernetes.io/dockerconfigjson"
-
-  data = {
-    ".dockerconfigjson" = jsonencode({
-      auths = {
-        "artifactory.cloud.cms.gov" = {
-          "username" = var.registry_username
-          "password" = var.registry_password
-          "email"    = "batcave@internal.cms.gov"
-        }
-      }
-    })
-  }
-}
