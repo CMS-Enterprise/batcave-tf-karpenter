@@ -46,8 +46,10 @@ resource "helm_release" "karpenter" {
 }
 
 resource "kubernetes_secret" "private-registry" {
+
   metadata {
     name = "private-registry"
+    namespace = var.helm_namespace
   }
 
   type = "kubernetes.io/dockerconfigjson"
