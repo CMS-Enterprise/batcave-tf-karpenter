@@ -1,6 +1,3 @@
-################################################################################
-# Helm Release - Karpenter
-################################################################################
 data "aws_eks_cluster" "cluster" {
   name = var.cluster_name
 }
@@ -19,29 +16,40 @@ provider "helm" {
 
 resource "helm_release" "karpenter" {
   namespace        = var.helm_namespace
-  create_namespace = var.helm_create_namespace
 
-  name       = "karpenter"
-  repository = "https://charts.karpenter.sh"
-  chart      = "karpenter"
-  version    = "0.6.1"
-
-  values = [
-    "${file("values.yaml")}"
-  ]
-  set {
-    name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
-    value = module.iam_assumable_role_karpenter.iam_role_arn
-  }
+  name       = "autoscaler"
+  repository = "https://kubernetes.github.io/autoscaler"
+  chart      = "autoscaler/cluster-autoscaler"
+  version    = "1.23.0"
 
   set {
     name  = "controller.clusterName"
     value = var.cluster_name
   }
-
   set {
-    name  = "controller.clusterEndpoint"
-    value = var.cluster_endpoint
+    name  = "autoscalingGroups[0].name"
+    value = var.general_asg
   }
+  set {
+    name = "autoscalingGroups[0].min"
+    value = "1"
+  }
+  set {
+    name = "autoscalingGroups[0].max"
+    value = "5"
+  }
+  set {
+    name  = "autoscalingGroups[0].name"
+    value = var.runner_asg
+  }
+  set {
+    name = "autoscalingGroups[0].min"
+    value = "1"
+  }
+  set {
+    name = "autoscalingGroups[0].max"
+    value = "5"
+  }
+
 }
 

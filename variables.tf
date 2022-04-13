@@ -1,4 +1,5 @@
 variable "cluster_name" {}
+
 variable "provider_url" {
     default = ""
 }
@@ -20,17 +21,29 @@ variable "permissions_boundary" {
 
 
 ### Helm variables
-
 variable "helm_namespace" {
-    default = "karpenter"
+    default = "kube-system"
 }
-variable "helm_create_namespace" {
-    type = bool
-    default = true
-}
+
 variable "helm_name" {
-    default = "karpenter"
+    default = "auto-scaler"
 }
-variable "cluster_endpoint" {
-    default = ""
+
+variable "general_asg" {}
+variable "runner_asg" {}
+
+variable "general_asg_min" {
+  default = "1"
+}
+
+variable "general_asg_max" {
+  default = "5"
+}
+
+variable "runner_asg_min" {
+  default = "0"
+}
+
+variable "runner_asg_max" {
+  default = "5"
 }
