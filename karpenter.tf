@@ -51,7 +51,7 @@ resource "helm_release" "autoscaler" {
   }
   set {
     name = "resources"
-    values = yamlencode({
+    value = yamlencode({
       limits = {
         cpu    = "2"
         memory = "1.5Gi"
