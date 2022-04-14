@@ -1,0 +1,2 @@
+autoscalingGroups:
+    - var.
