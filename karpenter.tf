@@ -38,6 +38,18 @@ resource "helm_release" "autoscaler" {
     value = var.general_asg_max
   }
   set {
+    name  = "autoscalingGroups[1].name"
+    value = var.runner_asg
+  }
+  set {
+    name = "autoscalingGroups[1].minSize"
+    value = var.runner_asg_min
+  }
+  set {
+    name = "autoscalingGroups[1].maxSize"
+    value = var.runner_asg_max
+  }
+  set {
     name = "resources.limits.cpu"
     value = "2"
   }
