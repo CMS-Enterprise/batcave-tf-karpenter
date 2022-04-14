@@ -8,7 +8,7 @@ variable "provider_url" {
 ### Karpenter IAM variables
 
 variable "worker_iam_role_name" {
-    default = ""
+  default = ""
 }
 
 variable "iam_path" {
