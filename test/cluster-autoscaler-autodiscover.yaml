@@ -144,7 +144,7 @@ spec:
         fsGroup: 65534
       serviceAccountName: cluster-autoscaler
       containers:
-        - image: k8s.gcr.io/autoscaling/cluster-autoscaler:v1.21.0
+        - image: k8s.gcr.io/autoscaling/cluster-autoscaler:v1.23.0
           name: cluster-autoscaler
           resources:
             limits:
@@ -160,7 +160,7 @@ spec:
             - --cloud-provider=aws
             - --skip-nodes-with-local-storage=false
             - --expander=least-waste
-            - --nodes=1:3:batcave-east-dev-general-20220413155906735800000017
+            - --nodes=1:3:batcave-east-dev-general-20220413231326161600000017
           env:
             - name: AWS_REGION
               value: "us-east-1"

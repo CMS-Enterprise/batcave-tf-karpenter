@@ -14,7 +14,7 @@ provider "helm" {
   }
 }
 
-resource "helm_release" "karpenter" {
+resource "helm_release" "autoscaler" {
   namespace        = var.helm_namespace
 
   name       = "autoscaler"
@@ -27,7 +27,7 @@ resource "helm_release" "karpenter" {
   }
   set {
     name  = "autoscalingGroups[0].name"
-    value = var.general_asg
+    value = "batcave-east-dev-general-20220413231326161600000017"
   }
   set {
     name = "autoscalingGroups[0].min"
@@ -38,16 +38,24 @@ resource "helm_release" "karpenter" {
     value = "5"
   }
   set {
-    name  = "autoscalingGroups[0].name"
-    value = var.runner_asg
+    name = "resource.limits.cpu"
+    value = "2"
   }
   set {
-    name = "autoscalingGroups[0].min"
+    name = "resource.limits.memory"
+    value = "2Gi"
+  }
+  set {
+    name = "resource.requests.cpu"
     value = "1"
   }
   set {
-    name = "autoscalingGroups[0].max"
-    value = "5"
+    name = "resource.request.memory"
+    value = "1Gi"
+  }
+  set {
+    name = "extraEnv[0]"
+    value = "AWS_REGION=us-east-1"
   }
 
 }
