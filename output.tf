@@ -4,7 +4,6 @@ output "karpenter_iam" {
 
 output "hr_manifest" {
   description = "The rendered manifest of the release as JSON"
-  value = helm_release.karpenter
+  value = helm_release.autoscaler
   sensitive = true
 }
-
