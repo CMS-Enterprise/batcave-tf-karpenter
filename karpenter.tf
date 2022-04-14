@@ -27,15 +27,15 @@ resource "helm_release" "autoscaler" {
   }
   set {
     name  = "autoscalingGroups[0].name"
-    value = "batcave-east-dev-general-20220413231326161600000017"
+    value = var.general_asg
   }
   set {
     name = "autoscalingGroups[0].minSize"
-    value = "1"
+    value = var.general_asg_min
   }
   set {
     name = "autoscalingGroups[0].maxSize"
-    value = "5"
+    value = var.general_asg_max
   }
   set {
     name = "resources.limits.cpu"
