@@ -51,19 +51,19 @@ resource "helm_release" "autoscaler" {
   }
   set {
     name = "resources.limits.cpu"
-    value = "2"
-  }
-  set {
-    name = "resources.limits.memory"
-    value = "2Gi"
-  }
-  set {
-    name = "resources.requests.cpu"
     value = "1"
   }
   set {
-    name = "resources.requests.memory"
+    name = "resources.limits.memory"
     value = "1Gi"
+  }
+  set {
+    name = "resources.requests.cpu"
+    value = "500mi"
+  }
+  set {
+    name = "resources.requests.memory"
+    value = "500m"
   }
 
 }
