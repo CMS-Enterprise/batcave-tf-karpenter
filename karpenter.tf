@@ -19,7 +19,7 @@ resource "helm_release" "karpenter" {
 
   name       = "autoscaler"
   repository = "https://kubernetes.github.io/autoscaler"
-  chart      = "autoscaler/cluster-autoscaler"
+  chart      = "cluster-autoscaler"
 
   set {
     name  = "controller.clusterName"
