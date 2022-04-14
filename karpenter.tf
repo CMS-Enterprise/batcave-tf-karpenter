@@ -50,7 +50,7 @@ resource "helm_release" "autoscaler" {
     value = "1"
   }
   set {
-    name = "resources.request.memory"
+    name = "resources.requests.memory"
     value = "1Gi"
   }
   set {
