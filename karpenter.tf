@@ -53,10 +53,6 @@ resource "helm_release" "autoscaler" {
     name = "resources.requests.memory"
     value = "1Gi"
   }
-  set {
-    name = "extraEnv[0]"
-    value = "AWS_REGION=us-east-1"
-  }
 
 }
 
