@@ -59,7 +59,7 @@ resource "helm_release" "autoscaler" {
   }
   set {
     name = "resources.requests.cpu"
-    value = "500mi"
+    value = "500Mi"
   }
   set {
     name = "resources.requests.memory"
