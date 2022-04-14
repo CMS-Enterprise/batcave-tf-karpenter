@@ -34,3 +34,16 @@ variable "helm_name" {
 variable "cluster_endpoint" {
     default = ""
 }
+
+variable "vpc_eni_subnets" {
+  type = map(any)
+}
+
+variable "worker_security_group_id" {
+  type = string
+}
+
+variable "rotate_nodes" {
+  type = bool
+  default = true
+}
