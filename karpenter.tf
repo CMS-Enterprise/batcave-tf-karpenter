@@ -50,17 +50,21 @@ resource "helm_release" "autoscaler" {
     value = var.runner_asg_max
   }
   set {
-    name = "resources"
-    value = yamlencode({
-      limits = {
-        cpu    = "2"
-        memory = "1.5Gi"
-      }
-      requests = {
-        cpu    = "1"
-        memory = "1Gi"
-      }
-    })
+    name = "resources.limits.cpu"
+    value = "2"
   }
+  set {
+    name = "resources.limits.memory"
+    value = "2Gi"
+  }
+  set {
+    name = "resources.requests.cpu"
+    value = "1"
+  }
+  set {
+    name = "resources.requests.memory"
+    value = "1Gi"
+  }
+
 }
 
