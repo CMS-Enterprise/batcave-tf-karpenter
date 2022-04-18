@@ -43,7 +43,7 @@ variable "worker_security_group_id" {
   type = string
 }
 
-variable "rotate_nodes" {
+variable "rotate_nodes_after_eniconfig_creation" {
   type = bool
   default = true
 }
