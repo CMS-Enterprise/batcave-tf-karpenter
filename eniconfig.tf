@@ -43,10 +43,6 @@ resource "kubernetes_manifest" "eniconfig_subnets"{
 
 resource "null_resource" "rotate_nodes_after_eniconfig_creation" {
 
-  # depends_on = [
-  #   kubernetes_manifest.eni_subnets
-  # ]
-
   count = var.rotate_nodes_after_eniconfig_creation ? 1 : 0
 
   provisioner "local-exec" {
