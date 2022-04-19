@@ -7,7 +7,7 @@ tolerations:
       effect: "NoSchedule"
 
 controller:
-  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/controller:v0.8.1"
+  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/controller:v0.8.2"
 
 webhook:
-  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/webhook:v0.8.1"
+  image: "artifactory.cloud.cms.gov/batcave-docker/karpenter/webhook:v0.8.2"
