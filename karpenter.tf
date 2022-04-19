@@ -35,12 +35,12 @@ resource "helm_release" "karpenter" {
   }
 
   set {
-    name  = "controller.clusterName"
+    name  = "clusterName"
     value = var.cluster_name
   }
 
   set {
-    name  = "controller.clusterEndpoint"
+    name  = "clusterEndpoint"
     value = var.cluster_endpoint
   }
 }
