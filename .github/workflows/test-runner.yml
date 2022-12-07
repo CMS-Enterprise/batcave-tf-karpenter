@@ -1,11 +1,6 @@
-name: your-workflow-name
-
-on:
-  push:
-    branches: [main]
-
-name: internal runners test
-
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 jobs:
 
   test_self_hosted:
