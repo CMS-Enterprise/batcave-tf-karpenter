@@ -3,7 +3,6 @@ variable "provider_url" {
     default = ""
 }
 
-
 ### Karpenter IAM variables
 
 variable "worker_iam_role_name" {
