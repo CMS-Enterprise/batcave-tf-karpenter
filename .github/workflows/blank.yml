@@ -35,6 +35,7 @@ jobs:
           
       # Look at AWS access    
       - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         run: |
           aws sts get-caller-identity
           aws configure list
