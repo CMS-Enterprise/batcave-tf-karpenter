@@ -37,6 +37,7 @@ jobs:
       - name: Configure AWS credentials from Test account
         uses: aws-actions/configure-aws-credentials@v1
         with:
+          role-to-assume: arn:aws:iam::373346310182:role/delegatedadmin/developer/batcave-dev-gitlab-runner-role
           aws-region: us-east-1
 #         role-to-assume: ${{ secrets.AWS_ROLE_FOR_GITHUB }}
 #         role-session-name: GitHubActions
