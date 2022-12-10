@@ -34,9 +34,13 @@ jobs:
           echo test, and deploy your project.
           
       # Look at AWS access    
-      - name: Configure AWS Credentials
+      - name: Configure AWS credentials from Test account
         uses: aws-actions/configure-aws-credentials@v1
-        run: |
+        with:
+          aws-region: us-east-1
+#         role-to-assume: ${{ secrets.AWS_ROLE_FOR_GITHUB }}
+#         role-session-name: GitHubActions
+      - run: |
           aws sts get-caller-identity
           aws configure list
           aws s3 ls 
