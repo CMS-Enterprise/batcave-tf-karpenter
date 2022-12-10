@@ -32,3 +32,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      # Look at AWS access    
+      - name: Configure AWS Credentials
+        run: |
+          aws sts get-caller-identity
+          aws configure list
+          aws s3 ls 
+          
+ 
