@@ -42,6 +42,11 @@ jobs:
 #         role-to-assume: ${{ secrets.AWS_ROLE_FOR_GITHUB }}
 #         role-session-name: GitHubActions
       - run: |
+          pwd
+          ls
+          whoami
+          aws
+          which aws
           aws sts get-caller-identity
           aws configure list
           aws s3 ls 
