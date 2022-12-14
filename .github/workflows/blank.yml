@@ -37,17 +37,6 @@ jobs:
           ls
           whoami
           which aws
+          aws configure list-profiles
           aws sts get-caller-identity
-          
-      # Look at AWS access    
-      - name: Configure AWS credentials from Test account
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-region: us-east-1
-#           aws
-#           which aws
-#           aws sts get-caller-identity
-#           aws configure list
-#           aws s3 ls 
-          
- 
+        
