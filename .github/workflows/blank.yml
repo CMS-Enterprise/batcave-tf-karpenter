@@ -38,14 +38,13 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-region: us-east-1
-      - run: |
-          pwd
-          ls
-          whoami
-          aws
-          which aws
-          aws sts get-caller-identity
-          aws configure list
-          aws s3 ls 
+      - run: pwd
+      - run: ls
+      - run: whoami
+#           aws
+#           which aws
+#           aws sts get-caller-identity
+#           aws configure list
+#           aws s3 ls 
           
  
