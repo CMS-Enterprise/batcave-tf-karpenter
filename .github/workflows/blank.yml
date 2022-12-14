@@ -34,9 +34,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           pwd
-          ls
-          whoami
+          ls -al
+          cd runner
+          ls -al
           which aws
-          aws configure list-profiles
-          aws sts get-caller-identity
-        
