@@ -36,6 +36,8 @@ jobs:
           pwd
           ls
           whoami
+          which aws
+          aws sts get-caller-identity
           
       # Look at AWS access    
       - name: Configure AWS credentials from Test account
