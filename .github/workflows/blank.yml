@@ -27,7 +27,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::373346310182:role/delegatedadmin/developer/adeyin-ikpah-gatus-task
-          role-session-name: samplerolesession
+          role-skip-session-tagging: true
           aws-region: ${{ env.AWS_REGION }}
       # Upload a file to AWS s3
       - name:  ls s3
