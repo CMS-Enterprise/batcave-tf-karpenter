@@ -1,8 +1,10 @@
-name: 'Terraform'
+name: 'Terraform Format-Validate'
 
 on:
-  pull_request:
-    types: [opened, reopened]
+  push:
+    branches: [ "justin-lf-patch-1" ]
+  # pull_request:
+  #   types: [opened, reopened]
   
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -12,26 +14,21 @@ permissions:
 
 jobs:
   terraform:
-    name: 'Terraform'
     runs-on: ubuntu-latest
-
+  
     steps:
-    # Checkout the repository to the GitHub Actions runner
-    - name: Checkout
-      uses: actions/checkout@v3
-    
+    - uses: actions/checkout@v3
+    - uses: hashicorp/setup-terraform@v2
+
     - name: Terraform fmt
-      uses: hashicorp/setup-terraform@v2
       id: fmt
-      run: terraform fmt -check
+      run: terraform fmt -check -diff
       continue-on-error: true
 
     - name: Terraform Init
-      uses: hashicorp/setup-terraform@v2
       id: init
       run: terraform init
-      
+
     - name: Terraform Validate
-      uses: hashicorp/setup-terraform@v2
       id: validate
       run: terraform validate
