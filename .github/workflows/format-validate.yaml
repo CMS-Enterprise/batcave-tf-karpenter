@@ -1,0 +1,32 @@
+name: 'Terraform Format-Validate'
+
+on:
+  pull_request:
+    types: [opened, reopened]
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - uses: actions/checkout@v3
+    - uses: hashicorp/setup-terraform@v2
+
+    - name: Terraform fmt
+      id: fmt
+      run: terraform fmt -check -diff
+      continue-on-error: true
+
+    - name: Terraform Init
+      id: init
+      run: terraform init
+
+    - name: Terraform Validate
+      id: validate
+      run: terraform validate
