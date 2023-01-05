@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
+  terraform-format-validate:
     runs-on: ubuntu-latest
   
     steps:
@@ -21,7 +21,6 @@ jobs:
     - name: Terraform fmt
       id: fmt
       run: terraform fmt -check -diff
-      continue-on-error: true
 
     - name: Terraform Init
       id: init
