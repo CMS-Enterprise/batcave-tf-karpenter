@@ -1,13 +1,13 @@
 variable "cluster_name" {}
 variable "provider_url" {
-    default = ""
+  default = ""
 }
 
 
 ### Karpenter IAM variables
 
 variable "worker_iam_role_name" {
-    default = ""
+  default = ""
 }
 
 variable "iam_path" {
@@ -22,17 +22,17 @@ variable "permissions_boundary" {
 ### Helm variables
 
 variable "helm_namespace" {
-    default = "karpenter"
+  default = "karpenter"
 }
 variable "helm_create_namespace" {
-    type = bool
-    default = true
+  type = bool
+  default = true
 }
 variable "helm_name" {
-    default = "karpenter"
+  default = "karpenter"
 }
 variable "cluster_endpoint" {
-    default = ""
+  default = ""
 }
 
 variable "vpc_eni_subnets" {
