@@ -25,7 +25,7 @@ variable "helm_namespace" {
   default = "karpenter"
 }
 variable "helm_create_namespace" {
-  type = bool
+  type    = bool
   default = true
 }
 variable "helm_name" {
@@ -44,6 +44,6 @@ variable "worker_security_group_id" {
 }
 
 variable "rotate_nodes_after_eniconfig_creation" {
-  type = bool
+  type    = bool
   default = true
 }
