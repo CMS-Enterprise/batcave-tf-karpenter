@@ -108,6 +108,6 @@ resource "aws_iam_policy" "karpenter_contoller" {
 }
 
 resource "aws_iam_role_policy_attachment" "karpenter_contoller_policy_attachment" {
-  role      = module.iam_assumable_role_karpenter.iam_role_name
+  role       = module.iam_assumable_role_karpenter.iam_role_name
   policy_arn = aws_iam_policy.karpenter_contoller.arn
 }

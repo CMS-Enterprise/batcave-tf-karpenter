@@ -17,7 +17,7 @@ provider "kubernetes" {
   }
 }
 
-resource "kubernetes_manifest" "eniconfig_subnets"{
+resource "kubernetes_manifest" "eniconfig_subnets" {
 
   for_each = var.vpc_eni_subnets
 
@@ -27,7 +27,7 @@ resource "kubernetes_manifest" "eniconfig_subnets"{
 
   manifest = {
     "apiVersion" = "crd.k8s.amazonaws.com/v1alpha1"
-    "kind" = "ENIConfig"
+    "kind"       = "ENIConfig"
     "metadata" = {
       "name" = "${each.key}"
     }
