@@ -52,4 +52,5 @@ jobs:
           ## You can use any other method to fetch the release version
           ## such as environment variable or from output of another action
           #release_version: ${{ github.event.inputs.release_version }}
+          release_version: 1.0.0
           # Optional
