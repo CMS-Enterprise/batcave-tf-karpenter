@@ -1,6 +1,9 @@
 name: Changelog CI
 
 on:
+  push:
+    branches:
+    - add-changelog-ci
   pull_request:
     types: [ opened ]
 
