@@ -25,6 +25,7 @@ jobs:
       id-token: write
       contents: write
       repository-projects: read
+      pull-requests: write
 
     steps:
       # Checks-out your repository
