@@ -3,16 +3,22 @@
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.61.0 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | >= 2.11.0 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.10.0 |
+| <a name="requirement_null"></a> [null](#requirement\_null) | >= 3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
-| <a name="provider_helm"></a> [helm](#provider\_helm) | n/a |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | n/a |
-| <a name="provider_null"></a> [null](#provider\_null) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.61.0 |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | >= 2.11.0 |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | >= 2.10.0 |
+| <a name="provider_null"></a> [null](#provider\_null) | >= 3.1.0 |
 
 ## Modules
 
@@ -40,7 +46,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_cluster_endpoint"></a> [cluster\_endpoint](#input\_cluster\_endpoint) | n/a | `string` | `""` | no |
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | n/a | `any` | n/a | yes |
+| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | n/a | `string` | n/a | yes |
 | <a name="input_helm_create_namespace"></a> [helm\_create\_namespace](#input\_helm\_create\_namespace) | n/a | `bool` | `true` | no |
 | <a name="input_helm_namespace"></a> [helm\_namespace](#input\_helm\_namespace) | n/a | `string` | `"karpenter"` | no |
 | <a name="input_iam_path"></a> [iam\_path](#input\_iam\_path) | n/a | `string` | `"/delegatedadmin/developer/"` | no |
@@ -48,7 +54,7 @@ No requirements.
 | <a name="input_provider_url"></a> [provider\_url](#input\_provider\_url) | n/a | `string` | `""` | no |
 | <a name="input_rotate_nodes_after_eniconfig_creation"></a> [rotate\_nodes\_after\_eniconfig\_creation](#input\_rotate\_nodes\_after\_eniconfig\_creation) | n/a | `bool` | `true` | no |
 | <a name="input_vpc_eni_subnets"></a> [vpc\_eni\_subnets](#input\_vpc\_eni\_subnets) | n/a | `map(any)` | n/a | yes |
-| <a name="input_worker_iam_role_name"></a> [worker\_iam\_role\_name](#input\_worker\_iam\_role\_name) | n/a | `string` | `""` | no |
+| <a name="input_worker_iam_role_name"></a> [worker\_iam\_role\_name](#input\_worker\_iam\_role\_name) | n/a | `string` | n/a | yes |
 | <a name="input_worker_security_group_id"></a> [worker\_security\_group\_id](#input\_worker\_security\_group\_id) | n/a | `string` | n/a | yes |
 
 ## Outputs

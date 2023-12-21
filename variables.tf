@@ -1,21 +1,26 @@
-variable "cluster_name" {}
+variable "cluster_name" {
+  type = string
+}
 variable "provider_url" {
   default = ""
+  type    = string
 }
 
 
 ### Karpenter IAM variables
 
 variable "worker_iam_role_name" {
-  default = ""
+  type = string
 }
 
 variable "iam_path" {
   default = "/delegatedadmin/developer/"
+  type    = string
 }
 
 variable "permissions_boundary" {
   default = "arn:aws:iam::373346310182:policy/cms-cloud-admin/developer-boundary-policy"
+  type    = string
 }
 
 
@@ -23,6 +28,7 @@ variable "permissions_boundary" {
 
 variable "helm_namespace" {
   default = "karpenter"
+  type    = string
 }
 variable "helm_create_namespace" {
   type    = bool
@@ -30,6 +36,7 @@ variable "helm_create_namespace" {
 }
 variable "cluster_endpoint" {
   default = ""
+  type    = string
 }
 
 variable "vpc_eni_subnets" {
