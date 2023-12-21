@@ -29,12 +29,12 @@ resource "kubernetes_manifest" "eniconfig_subnets" {
     "apiVersion" = "crd.k8s.amazonaws.com/v1alpha1"
     "kind"       = "ENIConfig"
     "metadata" = {
-      "name" = "${each.key}"
+      "name" = each.key
     }
     "spec" = {
       "subnet" = "eni-${each.value}"
       "securityGroups" = [
-        "${var.worker_security_group_id}"
+        var.worker_security_group_id
       ]
     }
   }

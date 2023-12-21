@@ -28,9 +28,6 @@ variable "helm_create_namespace" {
   type    = bool
   default = true
 }
-variable "helm_name" {
-  default = "karpenter"
-}
 variable "cluster_endpoint" {
   default = ""
 }

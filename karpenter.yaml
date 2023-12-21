@@ -41,7 +41,7 @@
 #     subnetSelector:
 #       ContainerSubnet: "true"
 #   ttlSecondsAfterEmpty: 30
-  
+
 ---
 apiVersion: karpenter.sh/v1alpha5
 kind: Provisioner
