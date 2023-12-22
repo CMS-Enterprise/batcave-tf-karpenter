@@ -7,4 +7,3 @@ output "hr_manifest" {
   value       = helm_release.karpenter
   sensitive   = true
 }
-
